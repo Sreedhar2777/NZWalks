@@ -164,23 +164,23 @@ namespace NZWalks.API.Controllers
 
         private async Task< bool> ValidateAddWalkAsync(Model.DTO.AddWalkRequest addWalkRequest)
         {
-            if (addWalkRequest == null)
-            {
-                ModelState.AddModelError(nameof(addWalkRequest),
-                    $"{nameof(addWalkRequest)} cannot be Empty");
+            //if (addWalkRequest == null)
+            //{
+            //    ModelState.AddModelError(nameof(addWalkRequest),
+            //        $"{nameof(addWalkRequest)} cannot be Empty");
 
-            }
+            //}
 
-            if (string.IsNullOrWhiteSpace(addWalkRequest.Name))
-            {
-                ModelState.AddModelError(nameof(addWalkRequest.Name),
-                    $"{nameof(addWalkRequest.Name)} cannot be Empty");
-            }
+            //if (string.IsNullOrWhiteSpace(addWalkRequest.Name))
+            //{
+            //    ModelState.AddModelError(nameof(addWalkRequest.Name),
+            //        $"{nameof(addWalkRequest.Name)} cannot be Empty");
+            //}
 
-            if (addWalkRequest.Length <= 0)
-            {
-                ModelState.AddModelError(nameof(addWalkRequest.Length), $"{nameof(addWalkRequest.Length)} Should be Greater than Zero");
-            }
+            //if (addWalkRequest.Length <= 0)
+            //{
+            //    ModelState.AddModelError(nameof(addWalkRequest.Length), $"{nameof(addWalkRequest.Length)} Should be Greater than Zero");
+            //}
 
             var region= await regionRepository.GetAsync(addWalkRequest.RegionId);
             if (region==null)
@@ -206,23 +206,23 @@ namespace NZWalks.API.Controllers
 
         private async Task<bool> ValidateUpdateWalkAsync(UpdateWalkRequest updateWalkRequest)
         {
-            if (updateWalkRequest == null)
-            {
-                ModelState.AddModelError(nameof(updateWalkRequest),
-                    $"{nameof(updateWalkRequest)} cannot be Empty");
+            //if (updateWalkRequest == null)
+            //{
+            //    ModelState.AddModelError(nameof(updateWalkRequest),
+            //        $"{nameof(updateWalkRequest)} cannot be Empty");
 
-            }
+            //}
 
-            if (string.IsNullOrWhiteSpace(updateWalkRequest.Name))
-            {
-                ModelState.AddModelError(nameof(updateWalkRequest.Name),
-                    $"{nameof(updateWalkRequest.Name)} cannot be Empty");
-            }
+            //if (string.IsNullOrWhiteSpace(updateWalkRequest.Name))
+            //{
+            //    ModelState.AddModelError(nameof(updateWalkRequest.Name),
+            //        $"{nameof(updateWalkRequest.Name)} cannot be Empty");
+            //}
 
-            if (updateWalkRequest.Length <= 0)
-            {
-                ModelState.AddModelError(nameof(updateWalkRequest.Length), $"{nameof(updateWalkRequest.Length)} Should be Greater than Zero");
-            }
+            //if (updateWalkRequest.Length <= 0)
+            //{
+            //    ModelState.AddModelError(nameof(updateWalkRequest.Length), $"{nameof(updateWalkRequest.Length)} Should be Greater than Zero");
+            //}
 
             var region = await regionRepository.GetAsync(updateWalkRequest.RegionId);
             if (region == null)

@@ -47,15 +47,15 @@ namespace NZWalks.API.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult>AddWalkDifficultyAsync([FromBody]AddWalkDifficultyRequest addWalkDifficultyRequest)
+        public async Task<IActionResult>AddWalkDifficultyAsync([FromBody]UpdateWalkDifficultyRequest addWalkDifficultyRequest)
         {
             //Validate the INcoming Request
 
 
-            if (!ValidateAddWalkDifficultyAsync(addWalkDifficultyRequest))
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ValidateAddWalkDifficultyAsync(addWalkDifficultyRequest))
+            //{
+            //    return BadRequest(ModelState);
+            //}
 
             var walkDifficultyDomain = new Model.Domain.WalkDifficulty
             {
@@ -76,15 +76,15 @@ namespace NZWalks.API.Controllers
         [HttpPut]
         [Route("{id:guid}")]
 
-        public async Task<IActionResult> UpdateWalkDifficulty([FromRoute]Guid id , [FromBody]AddWalkDifficultyRequest addWalkDifficultyRequest )
+        public async Task<IActionResult> UpdateWalkDifficulty([FromRoute]Guid id , [FromBody]UpdateWalkDifficultyRequest addWalkDifficultyRequest )
         {
 
             //Validate the Incoming Request
 
-            if (!ValidateUpdateWalkDifficultyAsync(addWalkDifficultyRequest))
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ValidateUpdateWalkDifficultyAsync(addWalkDifficultyRequest))
+            //{
+            //    return BadRequest(ModelState);
+            //}
 
             var walkDifficultyDomain = new Model.Domain.WalkDifficulty
             {
@@ -127,7 +127,7 @@ namespace NZWalks.API.Controllers
 
         #region Private Methods
 
-        private bool ValidateAddWalkDifficultyAsync( Model.DTO.AddWalkDifficultyRequest addWalkDifficultyRequest)
+        private bool ValidateAddWalkDifficultyAsync( Model.DTO.UpdateWalkDifficultyRequest addWalkDifficultyRequest)
         {
             if (addWalkDifficultyRequest == null)
             {
@@ -149,7 +149,7 @@ namespace NZWalks.API.Controllers
             return true;
         }
 
-        private bool ValidateUpdateWalkDifficultyAsync(Model.DTO.AddWalkDifficultyRequest addWalkDifficultyRequest)
+        private bool ValidateUpdateWalkDifficultyAsync(Model.DTO.UpdateWalkDifficultyRequest addWalkDifficultyRequest)
         {
             if (addWalkDifficultyRequest == null)
             {
