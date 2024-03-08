@@ -36,7 +36,7 @@ namespace NZWalks.API.Repositories
         public async Task< IEnumerable<Region>> GetAllAsync()
         {
          return await nZWalksDbContext.Regions.ToListAsync();
-        }
+        }  
 
         public async Task<Region> GetAsync(Guid Id)
         {

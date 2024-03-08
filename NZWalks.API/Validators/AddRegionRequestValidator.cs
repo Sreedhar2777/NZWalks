@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using NZWalks.API.Model.DTO;
 
-namespace NZWalks.API.Validators
+namespace NZWalks.API.Validators  
 {
     public class AddRegionRequestValidator : AbstractValidator<AddRegionRequest>
     {
